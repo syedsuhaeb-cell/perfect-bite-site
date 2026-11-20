@@ -1,0 +1,67 @@
+/* mobile.css — load AFTER styles.css and responsive.css */
+:root{--orange-text:#c2410c;--muted:#6b655f;--faint:#6f6962}
+html{scroll-padding-top:140px}
+button{touch-action:manipulation}
+.brand-mark{font-family:'Playfair Display',Georgia,serif}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Contrast: orange stays a fill; text uses a darker AA-safe token */
+.item-price,.add-btn,.eyebrow,.text-link,.combo-label,.pin,.combo-highlight strong,.brand b{color:var(--orange-text)}
+.primary{background:var(--orange-text)}.primary:hover{background:#9a3412}
+.add-btn{border-color:#e7b99f}.add-btn:hover{background:var(--orange-text);color:#fff}
+.item-category,.visit-section .muted{color:var(--faint)}
+.ico{flex:none;vertical-align:-3px}
+
+/* Veg / non-veg marker */
+.veg{display:inline-block;width:14px;height:14px;border:1.5px solid;border-radius:3px;position:relative;vertical-align:-2px;margin-right:7px;flex:none}
+.veg:after{content:"";position:absolute;inset:2.5px;border-radius:50%;background:currentColor}
+.veg.v{color:#1f8a4c}.veg.nv{color:#b3261e}
+
+/* Menu cards → list rows */
+.menu-card{flex-direction:row;justify-content:space-between;align-items:center;gap:14px;min-height:0}
+.item-info{min-width:0;flex:1}
+.item-name{display:inline}
+.item-desc{margin:6px 0 0}
+.item-price{margin-top:6px}
+.item-action{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.item-in-cart{margin:0}
+.qty-control span{min-width:18px;text-align:center}
+
+/* Sticky bottom cart bar */
+.cart-bar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:15;display:none;justify-content:space-between;align-items:center;background:var(--ink);color:#fff;border:0;border-radius:16px;padding:0 20px;min-height:52px;font-weight:700;font-size:15px;box-shadow:0 10px 30px #0004}
+.cart-bar.show{display:flex}
+.cart-open .cart-bar{display:none}
+.toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+
+/* Cart panel & modal on real phone viewports */
+.cart-panel{height:100dvh;padding-bottom:max(27px,env(safe-area-inset-bottom))}
+.extras-modal{max-height:90dvh;overflow:auto}
+.visit-actions{display:flex;gap:20px;flex-wrap:wrap}
+
+@media(max-width:800px){
+  .menu-toggle,.topbar nav{display:none!important}
+  .cart-label{display:none}
+  .cart-top{display:inline-flex;align-items:center;gap:6px;padding:0 14px}
+  .hero-art{display:none}
+  .hero{padding:36px 6vw 28px}
+  h1{font-size:clamp(38px,11vw,48px)}
+  .eyebrow{font-size:12px}
+  .menu-meta,.quick-strip span{font-size:13px}
+
+  .category-row{position:sticky;top:68px;z-index:9;background:var(--paper);margin:0 -5vw;padding:12px 5vw;border-bottom:1px solid var(--line)}
+  .category-btn{font-size:14px}
+
+  .menu-grid{grid-template-columns:1fr;gap:0}
+  .menu-card{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 0;background:transparent}
+  .menu-card:hover{transform:none;box-shadow:none}
+  .item-name{font-size:16px}
+  .item-desc{font-size:13px;line-height:1.45}
+  .item-price{font-size:15px}
+  .item-in-cart{font-size:12px}
+  .add-btn{font-size:14px;padding:0 20px}
+  .qty-control{font-size:16px;gap:8px}
+  .cart-line strong{font-size:15px}
+  .cart-line small{font-size:12px}
+  .extra-option,.extra-option strong{font-size:15px}
+  footer{padding-bottom:96px}
+}
