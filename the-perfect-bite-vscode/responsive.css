@@ -1,0 +1,167 @@
+img, iframe, video, embed, object {
+  max-width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .topbar {
+    position: sticky;
+    overflow: visible;
+    gap: 8px;
+  }
+
+  .topbar nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 5vw 14px;
+    background: #fffdf9;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 20px #211f1c12;
+    z-index: 11;
+  }
+
+  .topbar nav.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .topbar nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 8px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 8px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .topbar .brand {
+    min-width: 0;
+  }
+
+  .topbar .brand > span:last-child {
+    white-space: nowrap;
+  }
+
+  button,
+  a {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .cart-top {
+    padding: 0 12px;
+  }
+
+  .hero-copy > p,
+  .combo-section > div:first-child p,
+  .order-banner p,
+  .visit-section p,
+  .item-desc,
+  .menu-meta,
+  .quick-strip span,
+  footer p,
+  .cart-foot p,
+  .hero-note {
+    font-size: 16px;
+  }
+
+  .menu-card,
+  .combo-highlight,
+  .visit-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .menu-meta {
+    align-items: flex-start;
+  }
+
+  .category-btn,
+  .add-btn {
+    min-height: 44px;
+  }
+
+  .qty-control button,
+  .close-cart {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .search {
+    min-height: 44px;
+  }
+
+  .search input {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .topbar {
+    padding: 0 3vw;
+    gap: 5px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-mark {
+    width: 35px;
+    height: 35px;
+  }
+
+  .topbar .brand {
+    font-size: 10px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .menu-toggle {
+    gap: 4px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+
+  .cart-top {
+    font-size: 11px;
+    padding: 0 9px;
+  }
+}
